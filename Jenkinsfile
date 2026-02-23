@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB = credentials('dockerhub-cred')
+        DOCKERHUB = credentials('Docker-cred')
         DOCKER_USER = "bhanusiva"
         IMAGE = "devops-build-app"
     }
@@ -55,3 +55,5 @@ pipeline {
         }
     }
 }
+
+
