@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB = credentials('Docker-Cred')
+        DOCKERHUB = credentials('dockerhub-cred')
         DOCKER_USER = "bhanusiva"
         IMAGE = "devops-build-app"
     }
@@ -21,7 +21,7 @@ pipeline {
             }
         }
 
-        stage('Push to Dev Repo') {
+        stage('Push Dev Image') {
             when { branch 'dev' }
             steps {
                 sh '''
@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Push to Prod Repo') {
+        stage('Push Prod Image') {
             when { branch 'main' }
             steps {
                 sh '''
