@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB = credentials('Docker-cred')
+        DOCKERHUB = credentials('Docker-cred')
         DOCKER_USER = "bhanusiva"
         IMAGE = "devops-build-app"
     }
